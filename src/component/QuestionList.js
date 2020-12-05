@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import {Link} from "react-router-dom";
 import axios from 'axios'
 
 function QuestionList(){
@@ -14,13 +15,14 @@ function QuestionList(){
       <div><h1> This is questions List</h1>
       <ul>
       {questions.map(question => {
-         return (<li>
-         <h3>{question.title}</h3>
-         <p>{question.description}</p>
-         </li>)
+         return (<li  key={question._id}>
+               <Link to={'/'+question._id}><h3>{question.title}</h3></Link>
+               <p>{question.description}</p>
+               </li>)
       })}
-      </ul></div>
-   )
-}
+      </ul>
+      </div>
+
+   )}
 
 export default QuestionList;

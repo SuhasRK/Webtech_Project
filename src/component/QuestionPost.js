@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import axios from 'axios'
+import axios from 'axios' 
 
 function QuestionPost(){
 
@@ -18,32 +18,7 @@ function QuestionPost(){
         window.location.href = "/";
     }
 
-    // function handleChange(event){
-    //     let name = event.target.name;
-    //     let value = event.target.value;
-        
-    //     if(name==="title"){
 
-    //         setQuestion(prevValue => {
-    //             return {
-    //             title:value,
-    //             description:prevValue.description
-    //         }
-    //         })
-    //     }
-    //     else
-    //     {
-
-    //         setQuestion(prevValue => {
-    //             return {
-    //             title:prevValue.title,
-    //             description:value
-    //         }
-    //         })
-    //     }
-
-        
-    // }
 
     function handleChange(event){
         let {name,value} = event.target;
@@ -57,10 +32,6 @@ function QuestionPost(){
 
         
     }
-
-   
-
-
 
 
    return(

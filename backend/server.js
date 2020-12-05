@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-app.use(require('cors')())
-dotenv.config(); 
+const config = require('config');
 
+app.use(require('cors')())
 app.use(express.json())
 
-const uri = process.env.ATLAS_URI;
+const uri = config.get("ATLAS_URI");   
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
@@ -21,9 +20,18 @@ mongoose.connect(uri, {
      process.exit(-1)
  })
 
-const QuestionsPageRoute = require("./routes/questions")
+const QuestionsPageRoute = require("./routes/questionsRoute")
+const AnswerPageRoute=require('./routes/answersRoute')
+const SignupRoute=require('./routes/signupRoute')
+const LoginRoute = require("./routes/loginRoute")
+
 app.use("/",QuestionsPageRoute)
 
+app.use('/answer',AnswerPageRoute)
+
+app.use('/signup',SignupRoute)
+
+app.use('/login',LoginRoute)
 
 
 const port = process.env.PORT || 80;
