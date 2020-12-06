@@ -1,28 +1,35 @@
-import React,{useState} from 'react'
-import {Link} from "react-router-dom";
-import axios from 'axios'
+import React, { useState } from 'react'
+import { Link } from "react-router-dom";
+import axios from 'axios';
+import QuestionContainer from './QuestionComponent';
 
-function QuestionList(){
+console.log(localStorage.getItem("user_id"))
 
-   const [questions,setQuestions] =  useState([]);
+function QuestionList() {
+
+   const [questions, setQuestions] = useState([]);
 
    axios.get("http://localhost:80/")
-   .then(result =>setQuestions(result.data))
-   .catch(err => console.log(err))
+      .then(result => setQuestions(result.data))
+      .catch(err => console.log(err))
 
 
-   return(
-      <div><h1> This is questions List</h1>
-      <ul>
-      {questions.map(question => {
-         return (<li  key={question._id}>
-               <Link to={'/'+question._id}><h3>{question.title}</h3></Link>
-               <p>{question.description}</p>
+   return (
+      <div className="col-8 mx-auto">
+         <ul className="mx-auto">
+            {questions.map(question => {
+               return (
+                  <li key={question._id} style={{listStyle:"none"}}>
+                  <QuestionContainer created={question.createdAt} username={question.username} id={question._id} title={question.title} description={question.description} />
                </li>)
-      })}
-      </ul>
+            })}
+         </ul>
       </div>
 
-   )}
+   )
+}
+
+
+
 
 export default QuestionList;

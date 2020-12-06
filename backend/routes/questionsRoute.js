@@ -30,6 +30,7 @@ router.post("/:id/update",(req,res)=>{
 
 router.post("/add",(req,res) => {
     const newQuestion = new Question({
+        username:req.body.username,
         title:req.body.title,
         description:req.body.description
     })

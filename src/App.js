@@ -8,7 +8,8 @@ import QuestionPost from './component/QuestionPost'
 import Answer from './component/Answer'
 import Signup from './component/Signup'
 import Login from './component/Login'
-import {Link} from 'react-router';
+import Logout from './component/Logout'
+import Vote from './component/Vote'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -19,13 +20,16 @@ function App(){
         
         <Router>
             <Navbar />
-            <Route path='/' exact component={QuestionList} />
-            <Route path='/about'  component={About} />
-            <Route path='/add'  component={QuestionPost} />
-            <Route path='/:question_id'  component={Question} />
-            <Route path='/answer/:id'  component={Answer} />
-            <Route path='/signup'  component={Signup} />
+            <Route exact path='/' component={QuestionList} />
+            <Route exact path='/about'  component={About} />
+            <Route exact path='/add'  component={QuestionPost} />
+            <Route exact path='/question/:question_id'  component={Question} />
+            <Route exact path='/answer/:id'  component={Answer} />
+            <Route exact path='/signup'  component={Signup} />
             <Route path='/login'  component={Login} />
+            <Route path='/logout'  component={Logout} />
+            <Route path='/vote'  component={Vote} />
+
         </Router>
         </div>
     )

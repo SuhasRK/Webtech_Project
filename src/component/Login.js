@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios' 
+import jwt_decode from 'jwt-decode'
 
 function Login(){
     const [user,setUser] = useState({
@@ -27,12 +28,13 @@ function Login(){
                 alert(result.data.msg)
             else{
                 console.log(result.data)
-                // window.location.href = "/";   
+                var user_id = jwt_decode(result.data.token).id;
+                localStorage.setItem("user_id",user_id)
+                window.location.href = "/";   
             }
            
         })
         .catch((err) => console.log("Error :"+err))
-        // window.location.href='/';
 
     }
 
@@ -47,5 +49,6 @@ function Login(){
         </div>
     )
 }
+
 
 export default Login;

@@ -24,6 +24,8 @@ const QuestionsPageRoute = require("./routes/questionsRoute")
 const AnswerPageRoute=require('./routes/answersRoute')
 const SignupRoute=require('./routes/signupRoute')
 const LoginRoute = require("./routes/loginRoute")
+const UserRoute = require("./routes/userRoute")
+
 
 app.use("/",QuestionsPageRoute)
 
@@ -32,6 +34,9 @@ app.use('/answer',AnswerPageRoute)
 app.use('/signup',SignupRoute)
 
 app.use('/login',LoginRoute)
+
+app.use('/user',UserRoute)
+
 
 
 const port = process.env.PORT || 80;

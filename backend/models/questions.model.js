@@ -2,6 +2,7 @@ const mongoose = require("mongoose")
 
 
 var questionSchema = new mongoose.Schema({
+    username:{type:String,required:true},
     title:{type:String, required:true},
     description:{type:String}
 },{timestamps:true})

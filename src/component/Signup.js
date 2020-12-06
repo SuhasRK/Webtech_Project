@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios' 
+import jwt_decode from 'jwt-decode';
 
 function Signup(){
     const [user,setUser] = useState({
@@ -26,12 +27,15 @@ function Signup(){
             if(result.data.msg === "User already exists" || result.data.msg === "Enter all fields")
                 alert(result.data.msg)
             else{
+                var userId = jwt_decode(result.data.token).id;
+                localStorage.setItem("user_id",userId);
                 console.log(result.data.msg)
+                window.location.href='/';
             }
            
         })
         .catch((err) => console.log("Error :"+err))
-        // window.location.href='/';
+        
 
     }
 

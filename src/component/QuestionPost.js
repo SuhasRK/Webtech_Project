@@ -3,19 +3,32 @@ import axios from 'axios'
 
 function QuestionPost(){
 
-
     const [question , setQuestion] = useState({
+        username:"",
         title: '',
         description:''
     })
+
+    axios.get("http://localhost/user/"+localStorage.getItem("user_id"))
+    .then(result =>{setQuestion(prevValue => {
+        
+        return {
+            ...prevValue,
+            username:result.data
+        }
+        
+         })
+        })
+    .catch(err => console.log(err))
 
     function postQuestion(event){
         event.preventDefault();
         axios.post("http://localhost/add",question)
         .then(result =>console.log(result.data))
         .catch(err => console.log(err))
-
+        
         window.location.href = "/";
+        
     }
 
 
