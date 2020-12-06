@@ -3,6 +3,7 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 import uuid from 'react-uuid'
 import QuestionContainer from './QuestionComponent'
+import AnswerContainer from './AnswerComponent'
 
 function Question(props){
     const [question, setQuestion] = useState({
@@ -33,16 +34,27 @@ function Question(props){
 
     
     return(
-        <div>
+        <div className="col-8 mx-auto">
         <QuestionContainer created={question.createdAt} username={question.username} id={question._id} title={question.title} description={question.description} />
         
-        <ul>
+        {answers.length ?
+            
+            
+            <div className="mx-auto" >
+            <h6 className="text-center my-5" style={{fontFamily:"JetBrains Mono, monospace",fontSize:"1.5rem"}}>Answers</h6>
             {answers.map(answer => {
-                return <li key={uuid()}>{answer.description}</li>
+                return <AnswerContainer key={uuid()} created={answer.createdAt} username={answer.username} description={answer.description} />
             })}
-        </ul>
+            </div>
+            :
+            <h5 className="text-center shadow-lg p-3 mb-5 bg-white rounded" style={{fontFamily:"JetBrains Mono, monospace"}}>This questions has no answers yet</h5>
+        
+         }
+       
     
-        <Link to={"/answer/"+props.match.params.question_id} >Answer</Link>
+        
+        <Link className="btn btn-primary btn-lg btn-block mx-auto" style={{maxWidth:"500px"}} to={"/answer/"+props.match.params.question_id} >Answer</Link>
+       
         
         
         </div>    

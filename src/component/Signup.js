@@ -40,7 +40,7 @@ function Signup(){
     }
 
     return (
-        <div>
+        <div className="bg1">
             <form class="box" onSubmit={postUser}>
     <h1>Signup</h1>
     <input type="text" onChange={handleChange} name="username" placeholder="Username" value={user.username} />

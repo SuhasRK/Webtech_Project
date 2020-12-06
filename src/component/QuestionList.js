@@ -15,11 +15,11 @@ function QuestionList() {
 
 
    return (
-      <div className="col-8 mx-auto">
+      <div className="col-8 mx-auto ">
          <ul className="mx-auto">
             {questions.map(question => {
                return (
-                  <li key={question._id} style={{listStyle:"none"}}>
+                  <li key={question._id} style={{listStyle:"none"}} className="shadow-lg mb-5 bg-white rounded">
                   <QuestionContainer created={question.createdAt} username={question.username} id={question._id} title={question.title} description={question.description} />
                </li>)
             })}

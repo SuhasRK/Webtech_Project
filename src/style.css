@@ -58,3 +58,24 @@ body{
 
   }
   
+
+.bg1{
+  background:url("./photos/bgr.jpg") !important;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-size:cover;
+  height: 100vh;
+}
+
+/* .bg2{
+  background-image:url('./photos/bgr2.jpg');
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-size:cover;
+  height:100vh;
+} */
+
+
+.bg{
+  background-color: #666666 !important;
+}

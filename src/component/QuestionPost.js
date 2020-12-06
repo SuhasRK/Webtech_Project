@@ -48,12 +48,14 @@ function QuestionPost(){
 
 
    return(
-      <div>
-      <h1>Post your Question here</h1>
+      <div className="col-8 mx-auto ">
+      <h1 class="my-5" style={{color: "#111", fontFamily: 'Montserrat',fontSize: "75px", fontWeight: "bold", letterSpacing: "-1px", lineHeight: "1", textAlign: "center"}}>Post your Question here</h1>
         <form onSubmit={postQuestion}>
-            <input type="text" onChange={handleChange} name="title" placeholder="Title" value={question.title}/>
-            <input type="text" onChange={handleChange} name="description" placeholder="Description" value={question.description}/>
-            <input type="submit" />
+            <div className="form-group">
+            <input type="text" onChange={handleChange} className="form-control mb-3 " name="title" placeholder="Title" value={question.title}/>
+            <textarea type="text" onChange={handleChange} className="form-control mb-3 " name="description" placeholder="Description" value={question.description}rows="10"/>
+            </div>
+            <div style={{display:"flex"}} className="justify-content-center" ><input className="btn btn-primary btn-lg btn-block" type="submit" value="Post" /></div>
         </form>
       </div>
    )

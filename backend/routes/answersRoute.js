@@ -11,7 +11,11 @@ router.get("/:id",(req,res)=>{
 })
 
 router.post("/:id",(req,res)=>{
+
+    if(!req.body.description)
+        return res.json({msg:"Description needed"})
    const answer=new Answer({
+       username:req.body.username,
        description:req.body.description,
        question_id:req.body.question_id
    })
