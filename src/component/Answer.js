@@ -72,7 +72,7 @@ function Answer(props) {
     return (
         <div >
             <QuestionContainer created={question.createdAt} username={question.username} id={question._id} title={question.title} description={question.description} />
-            <div className="container my-5 p-3" style={{ backgroundColor: "#fff", borderRadius: "10px",border:"2px solid blue" }}>
+            <div className="container my-5 p-3" style={{ backgroundColor: "#ccccde", borderRadius: "10px",border:"2px solid blue" }}>
                 <form onSubmit={submitAnswer}>
                     <div className="form-group">
                         

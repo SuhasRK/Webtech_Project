@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function QuestionContainer(props) {
     return (
-       <div className="container my-5 p-3" style={{backgroundColor: "#fff",borderRadius: "10px"}}>
+       <div className="container my-5 p-3 shadow-lg p-3 mb-5 rounded" style={{backgroundColor: "#e6f2ff",borderRadius: "10px", fontFamily:"Quicksand"}} >
        <div className="row">
            {/* <div className="col-2">
                <img src="./images/profile.jpg" alt="" height="60px" width="60px"
@@ -11,8 +11,8 @@ function QuestionContainer(props) {
            </div> */}
            <div className="col">
                <div className="mb-3">
-                   <div>
-                       <b>{props.username}</b><span className="ml-4">{props.created}</span>
+                   <div  className="d-flex justify-content-between">
+                       <b>{props.username}</b><span>{props.created.split('T')[0]} , {props.created.split('T')[1]}</span>
                    </div>
            
                </div>
