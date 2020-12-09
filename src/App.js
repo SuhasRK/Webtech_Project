@@ -10,9 +10,12 @@ import Signup from './component/Signup'
 import Login from './component/Login'
 import Logout from './component/Logout'
 import Vote from './component/Vote'
+import Profile from './component/Profile'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import 'jquery/dist/jquery.min.js'
+import 'bootstrap/dist/js/bootstrap.min.js'
+require('popper.js');
 
 function App(){
     return(
@@ -29,6 +32,7 @@ function App(){
             <Route path='/login'  component={Login} />
             <Route path='/logout'  component={Logout} />
             <Route path='/vote'  component={Vote} />
+            <Route path='/profile'  component={Profile} />
 
         </Router>
         </div>

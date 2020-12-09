@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import uuid from 'react-uuid'
@@ -15,21 +15,27 @@ function Question(props){
 
     const [answers, setAnswers] = useState([]);
 
-    axios.get("http://localhost/"+props.match.params.question_id)
-    .then(result => {
-        setQuestion({
-        username:result.data.username,
-        title:result.data.title,
-        description:result.data.description,
-        createdAt:result.data.createdAt
-        })
+    useEffect(() => {
 
-        axios.get("http://localhost/answer/"+props.match.params.question_id)
-        .then(result => setAnswers(result.data))
+        axios.get("http://localhost/"+props.match.params.question_id)
+        .then(result => {
+            setQuestion({
+            username:result.data.username,
+            title:result.data.title,
+            description:result.data.description,
+            createdAt:result.data.createdAt
+            })
+    
+            axios.get("http://localhost/answer/"+props.match.params.question_id)
+            .then(result => setAnswers(result.data))
+            .catch(err => console.log(err))
+    
+        })
         .catch(err => console.log(err))
 
-    })
-    .catch(err => console.log(err))
+     },[])
+
+
 
 
     

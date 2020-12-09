@@ -1,8 +1,14 @@
 import React from 'react'
+import Services from './AboutServices'
+import Team from './AboutTeam'
 
 function About(){
     return(
-       <h1> This is About</h1>
+       <div>
+        <Services />
+        <Team />
+       </div>
+
     )
 }
 

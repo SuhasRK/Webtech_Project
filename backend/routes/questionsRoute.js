@@ -9,6 +9,12 @@ router.get("/",(req,res)=>{
     .catch(err => res.status(400).json("Error: "+err))
 })
 
+router.get("/asked/:username",(req,res)=>{
+    Question.find({username:req.params.username})
+    .then(questions => res.json(questions))
+    .catch(err => res.status(400).json("Error: "+err))
+})
+
 router.get("/:id",(req,res)=>{
     Question.findById(req.params.id)
     .then(question => res.json(question))
