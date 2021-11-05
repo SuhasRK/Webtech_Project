@@ -34,7 +34,7 @@ function Team(){
     <div className="col-lg-4 col-sm-6">
         <div className="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
             <div className="team-image">
-                <img src="https://instagram.fblr1-5.fna.fbcdn.net/v/t51.2885-15/e35/s480x480/50554685_116954762720758_5326501051305821702_n.jpg?_nc_ht=instagram.fblr1-5.fna.fbcdn.net&_nc_cat=110&_nc_ohc=ER7GUlf3Ig8AX_9IddW&tp=1&oh=97d85caba458bf4d501a58993d7222bc&oe=5FF90032" alt="Team"/>
+                <img src="https://www.mediafire.com/view/08x4b5ns5eooefs/IMG_20210620_104547_470.jpg/file" alt="Team"/>
             </div>
             <div className="team-content">
                 <div className="team-social">
