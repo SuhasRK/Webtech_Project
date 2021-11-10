@@ -25,7 +25,6 @@ Open Another Terminal in same directory and
 ## Contributors
 
 - [@SuryaMN](https://github.com/SuryaMN)
-- [@SuhasRK](https://github.com/SuhasRK)
 
 
 
